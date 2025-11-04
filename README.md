@@ -1,131 +1,102 @@
-# vendas
-Landing page da equipe operação fechamento
-Build a modern, responsive landing page using React + Tailwind CSS for a real estate sales team called “Operação Fechamento”, representing Cury Construtora. The goal is to generate qualified real estate leads and encourage users to contact the team via WhatsApp or contact form.
+!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operação Fechamento - Encontre seu imóvel ideal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: #f8f9fa; color: #222; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 10%; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    header h1 { font-size: 1.4rem; color: #007bff; }
+    nav a { margin-left: 1.5rem; text-decoration: none; color: #333; font-weight: 500; }
+    .hero { text-align: center; padding: 5rem 10%; background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; color: #fff; position: relative; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); }
+    .hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .hero h2 { font-size: 2.4rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.1rem; margin-bottom: 2rem; }
+    .whatsapp-btn { background: #25D366; color: white; padding: 14px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+    .whatsapp-btn:hover { background: #1eb45f; }
+    section { padding: 4rem 10%; text-align: center; }
+    section h3 { font-size: 1.8rem; margin-bottom: 2rem; color: #007bff; }
+    form { display: flex; flex-direction: column; max-width: 400px; margin: 0 auto; gap: 1rem; }
+    input, button { padding: 12px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem; }
+    button { background: #007bff; color: #fff; border: none; cursor: pointer; font-weight: 600; }
+    button:hover { background: #0056b3; }
+    footer { text-align: center; padding: 2rem; background: #fff; margin-top: 3rem; box-shadow: 0 -2px 5px rgba(0,0,0,0.05); }
+    .socials a { margin: 0 10px; text-decoration: none; color: #007bff; font-weight: 500; }
 
-🎯 OBJECTIVE:
-Create a professional, trustworthy, and lightweight landing page that highlights Cury’s real estate developments and invites visitors to talk with the Operação Fechamento team.
+    /* Botão flutuante WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: 0.3s;
+      z-index: 1000;
+    }
+    .whatsapp-float:hover { background-color: #1eb45f; transform: scale(1.1); }
 
-🎨 COLOR PALETTE:
-Primary:
-- #081421 (dark petroleum blue)
-- #282B28 (dark gray)
-- #F3D3BD (soft beige)
-- #FCFAF9 (off white)
-- #C0D8CD (light mint green)
-Secondary accents:
-- #3C7A89
-- #161B33
-- #05241F
+    @media (max-width: 768px) {
+      .hero h2 { font-size: 1.8rem; }
+      header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Operação Fechamento</h1>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
 
-💎 STYLE GUIDE:
-- Clean, elegant, minimalistic design
-- Large spacing and modern layout
-- Typography: “Poppins” or “Inter”
-- Lucide-react icons for UI and social links
-- Rounded corners (12px)
-- Smooth hover animations and transitions
-- Mobile-first responsive design
-- Tailwind CSS styling only
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Encontre o imóvel dos seus sonhos</h2>
+      <p>Condições especiais direto com a construtora. Financiamento fácil e localização privilegiada.</p>
+      <a href="https://wa.me/5521999999999" target="_blank" class="whatsapp-btn">💬 Fale com um corretor agora</a>
+    </div>
+  </section>
 
----
+  <section id="sobre">
+    <h3>Por que escolher a Operação Fechamento?</h3>
+    <p>Equipe especializada em imóveis na planta, prontos e oportunidades exclusivas da Cury Construtora.</p>
+  </section>
 
-📐 PAGE STRUCTURE:
+  <section id="contato">
+    <h3>Cadastre-se e receba nossas melhores ofertas</h3>
+    <form action="https://formspree.io/f/mkgwnyzy" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="tel" name="telefone" placeholder="Seu WhatsApp" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
 
-1️⃣ HEADER (fixed)
-- Logo text: “Operação Fechamento”
-- Navigation links (anchors): Início | Empreendimentos | Especialidades | Contato
-- Transparent background (changes to solid #081421 on scroll)
-- White text
-- Hamburger menu on mobile
-- Soft shadow under the header
+  <footer>
+    <p>© 2025 Operação Fechamento. Todos os direitos reservados.</p>
+    <div class="socials">
+      <a href="https://instagram.com/seuinsta" target="_blank">Instagram</a>
+      <a href="https://facebook.com/seufb" target="_blank">Facebook</a>
+      <a href="https://wa.me/5521999999999" target="_blank">WhatsApp</a>
+    </div>
+  </footer>
 
----
-
-2️⃣ HERO SECTION
-- Full-width background image of modern apartments or skyline of Rio de Janeiro
-- Overlay with a dark gradient for readability
-- Title: “Sua oportunidade começa aqui com a Operação Fechamento”
-- Subtitle: “Empreendimentos da Cury Construtora com condições exclusivas e financiamento facilitado.”
-- Two call-to-action buttons:
-  - “Falar no WhatsApp” → link to https://wa.me/5521999999999?text=Olá,+tenho+interesse+em+um+imóvel+da+Cury
-  - “Ver Empreendimentos” → scrolls to Empreendimentos section
-- Centered layout, text in white, and CTA buttons in #3C7A89 (hover darker)
-
----
-
-3️⃣ EMPREENDIMENTOS SECTION
-- Title: “Empreendimentos em destaque”
-- Grid layout (3 to 6 property cards)
-- Each card includes:
-  - Image of the property
-  - Name (e.g., Farol da Guanabara)
-  - Location
-  - Price range or financing condition
-  - “Ver Detalhes” button
-- On click, open a modal popup showing:
-  - Image gallery
-  - Full description
-  - List of features (e.g. “VLT na porta”, “Lazer completo”, “Financiamento Caixa”)
-  - Button: “Quero saber mais” → opens WhatsApp link
-- Modal: blurred background, rounded edges, close icon, and smooth animation
-
----
-
-4️⃣ ESPECIALIDADES SECTION
-- Title: “Nossa Especialidade é Vender!”
-- Subtext: “Com tecnologia, foco e agilidade, a equipe Operação Fechamento transforma oportunidades em conquistas.”
-- Display visual tags inspired by tech stack (React, Next.js, Node, Java, Spring Boot, Redis, RabbitMQ) — reinterpret as “Velocidade”, “Estratégia”, “Conexão”, “Inovação”, “Eficiência”, “Resultados”, “Confiança”.
-- Background color: #F3D3BD with dark text
-
----
-
-5️⃣ CONTATO + REDES SOCIAIS
-- Title: “Entre em contato com nossa equipe”
-- Contact form:
-  - Nome
-  - E-mail
-  - Telefone
-  - Mensagem
-- On submit: show “Obrigado! Entraremos em contato em breve.”
-- Social media icons (Lucide React):
-  - WhatsApp → https://wa.me/5521999999999?text=Olá,+quero+falar+com+a+equipe+Operação+Fechamento
-  - Instagram → https://instagram.com/seulink
-  - Facebook → https://facebook.com/seulink
-- Background: #161B33
-- Text color: #FCFAF9
-- CTA buttons with color #3C7A89 and hover effect
-
----
-
-6️⃣ FOOTER
-- Minimal layout with centered text
-- Background: #081421
-- Text color: #C0D8CD
-- Content:
-  - “© 2025 Operação Fechamento | Cury Construtora”
-  - Phone and address (Rua do Porto Maravilha, Rio de Janeiro)
-- Simple and professional look
-
----
-
-⚙️ FUNCTIONAL DETAILS:
-- Smooth scroll between sections
-- Sticky header that changes color on scroll
-- Modal popup for property details
-- WhatsApp floating button (bottom-right) for mobile users
-- Hover animations on cards and buttons
-- Contact form integrated with Formspree.io (optional)
-- SEO optimized for: “Cury Construtora”, “Operação Fechamento”, “imóveis Rio de Janeiro”, “Porto Maravilha”
-
----
-
-📦 STACK:
-- React + Tailwind CSS
-- Lucide-react icons
-- HeadlessUI for modals and menu animations
-- Framer Motion for entrance animations (optional)
-
----
-
-🎯 GOAL:
-Deliver a visually stunning, fast, and conversion-oriented landing page for “Operação Fechamento”, the elite real estate sales team of Cury Construtora — connecting customers directly via WhatsApp or contact form.
+  <!-- Botão flutuante WhatsApp -->
+  <a href="https://wa.me/5521999999999" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">💬</a>
+</body>
+</html>
